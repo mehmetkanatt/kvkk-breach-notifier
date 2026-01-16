@@ -50,6 +50,7 @@ function scrapeWebsite()
     $items = $xpath->query("//div[contains(@class,'news__box')]");
 
     $result = [];
+    $i = 0;
 
     foreach ($items as $item) {
 
@@ -72,7 +73,11 @@ function scrapeWebsite()
             continue; // 🚫 skip empty / invalid blocks
         }
 
-        file_put_contents('latest-link.txt', $link);
+        if ($i === 0) {
+            file_put_contents('latest-link.txt', $link);
+        }
+
+        $i++;
 
         $result[] = [
             'title' => $title,
