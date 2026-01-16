@@ -1,8 +1,8 @@
 <?php
 
-$latestFlag = file_get_contents('latest-link.txt');
+$latestFlag = trim(file_get_contents('latest-link.txt'));
 $leaks = scrapeWebsite();
-$currentFlag = file_get_contents('latest-link.txt');
+$currentFlag = trim(file_get_contents('latest-link.txt'));
 $today = date('d M Y');
 
 $botToken = 'your-bot-token';
