@@ -20,7 +20,7 @@ foreach ($leaks as $leak) {
     }
 
     $title = urlencode($leak['title']);
-    $message .= "• <https://www.kvkk.gov.tr{$leak['link']}|$title>\n";
+    $message .= "• <{$leak['link']}|$title>\n";
 }
 chatPostMessage($channel, $message, $botToken);
 
