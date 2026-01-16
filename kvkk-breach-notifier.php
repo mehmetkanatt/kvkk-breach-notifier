@@ -12,6 +12,12 @@ if ($latestFlag === $currentFlag) {
     exit;
 }
 
+if (empty($leaks)) {
+    $message = ":warning: Veri ihlali bildirim sitesi erişilemedi veya veri bulunamadı";
+    chatPostMessage($channel, $message, $botToken);
+    exit;
+}
+
 $message = ":bangbang: Yeni veri ihlali var ($today)\n";
 foreach ($leaks as $leak) {
 
