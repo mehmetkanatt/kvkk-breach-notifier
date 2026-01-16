@@ -58,13 +58,13 @@ function scrapeWebsite()
             ".//div[@class='news__box-meta']/a/@title",
             $item
         );
-        $title = $titleNode->item(0)->nodeValue;
+        $title = trim($titleNode->item(0)->nodeValue);
 
         $linkNode = $xpath->query(
             ".//div[@class='news__box-meta']/a/@href",
             $item
         );
-        $link = $linkNode->item(0)->nodeValue;
+        $link = trim($linkNode->item(0)->nodeValue);
 
         $dateNode = $xpath->query(".//p[contains(@class,'date')]", $item)->item(0);
         $date = trim($dateNode->textContent);
